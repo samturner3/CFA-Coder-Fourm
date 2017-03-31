@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :posts
-  has_many :topics
+  has_many :posts, :dependent => :delete_all
+  has_many :topics, :dependent => :delete_all
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
